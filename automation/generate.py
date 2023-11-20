@@ -94,11 +94,7 @@ def search_lines_with_token(lines: List[str], token: str) -> List[int]:
     """
     Searches for lines with token.
     """
-    result = []
-    for line_index, line in enumerate(lines):
-        if token in line:
-            result.append(line_index)
-    return result
+    return [line_index for line_index, line in enumerate(lines) if token in line]
 
 
 def inject_papers_list_into_readme(
